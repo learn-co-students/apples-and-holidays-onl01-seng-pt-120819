@@ -43,7 +43,7 @@ end
 def add_new_holiday_with_supplies(holiday_hash, season, holiday_name, supply_array)
   # code here
   # remember to return the updated hash
- holiday_hash[season][holiday_name] = supply_array 
+ holiday_hash[season][holiday_name] = supply_array
  holiday_supplies
  #binding.pry
 end
@@ -56,7 +56,7 @@ new_array = []
 new_array << holiday_hash[:winter][:christmas]
 new_array.push (holiday_hash[:winter][:new_years])
 new_array.flatten
-new array
+
 # iterate over holiday hash (winter key) we will be able to access key and values of nested hash
 end
 
@@ -68,21 +68,26 @@ def all_supplies_in_holidays(holiday_hash)
   # Summer:
   #   Fourth Of July: Fireworks, BBQ
   # etc.
-
+  
+  holiday_hash.each do |seasons, holidays|
+    puts "#{seasons.to_s.capitalize}:" 
+    holidays.each do |holiday, supplies|
+    puts "  #{holiday.to_s.split("_").collect {|word| word.capitalize}.join(" ")}: #{supplies.join(", ")}" 
+    
+   end
+ end
 end
 
 def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
   # include the string "BBQ"
- bbq_season = Array.new
+  bbq_season = Array.new
   holiday_hash.each do |season, holidays|
-  holiday.each do |holiday_name, supply|
-end 
+    holidays.each do |holiday_name, supply|
+    if supply.include?("BBQ") 
+      bbq_season << holiday_name
+    end
+  end
 end
+  bbq_season
 end
-
-
-
-
-
-
