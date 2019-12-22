@@ -17,9 +17,6 @@ describe "holiday_supplies_hash" do
       }
     }
   }
-
- # Question 1
- # Write a method that returns the second supply for the Fourth of July
   describe "#second_supply_for_fourth_of_july" do
     it "returns the string 'BBQ' without hardcoding it" do
       expect(second_supply_for_fourth_of_july(holiday_supplies)).to eq("BBQ")
@@ -28,8 +25,6 @@ describe "holiday_supplies_hash" do
     end
   end
 
-  # Question 2
-  # Write a method that adds a supply to all Winter holidays
   describe "#add_supply_to_winter_holidays" do
     it "iterates through winter holidays adds a supply to each one" do
       add_supply_to_winter_holidays(holiday_supplies, "Balloons")
@@ -38,8 +33,6 @@ describe "holiday_supplies_hash" do
     end
   end
 
-  # Question 3
-  # Write a method that adds a supply to Memorial Day
   describe "#add_supply_to_memorial_day" do
     let(:memorial_day_supplies) { holiday_supplies[:spring][:memorial_day] }
 
@@ -56,8 +49,6 @@ describe "holiday_supplies_hash" do
     end
   end
 
-  # Question 4
-  # Write a method that adds a new holiday and its associated supplies to any season
   describe "#add_new_holiday_with_supplies" do
     it "modifies the original hash by adding supplies of a new holiday to a season" do
       expect(holiday_supplies[:fall].keys).not_to include(:columbus_day)
@@ -79,8 +70,6 @@ describe "holiday_supplies_hash" do
     end
   end
 
-  # Question 5
-  # Write a method to collect all Winter supplies from all the winter holidays
   describe "#all_winter_holiday_supplies" do
     it "has all the winter supplies" do
       ["Lights", "Wreath", "Party Hats"].each do |supply|
@@ -89,8 +78,6 @@ describe "holiday_supplies_hash" do
     end
   end
 
-  # Question 6
-  # Write a method that uses a loop to list out all the supplies you have for each holiday and the season
   describe "#all_supplies_in_holidays" do
 
     # There are two ways we might go about outputting a big block of text. One way
@@ -101,14 +88,7 @@ describe "holiday_supplies_hash" do
 
     before do
 
-    # This funny looking <<-TEXT thing is called heredoc. It's a multi-line string
-    # delimiter that makes it really easy for us to write multi-line strings in the middle
-    # of code. The TEXT part is arbitrary too. It could easily have been <<-BLAHBLAH. The only
-    # requirement is that you use the same word to end the multi-line string.
-
-    # For more info about heredocs, see this link: http://en.wikibooks.org/wiki/Ruby_Programming/Here_documents
-
-      @output = <<-TEXT
+ 
 Winter:
   Christmas: Lights, Wreath
   New Years: Party Hats
